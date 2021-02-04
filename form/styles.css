@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    /* background-color:black; */
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    /* background:violet;   */
+    height: 80vh;
+    width: 80vw;
+    /* min-width: 600px; */
+    /* min-height: 700px; */
+}
+
+.container {
+    background-color: rgba(0,0,0,0.3);
+    /* display:none; */
+    display:grid;
+    /* background-color:darkslateblue; */
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 8vh 8vh 58vh 8vh;
+    grid-template-areas:    "t t"
+                            "fi fi"
+                            "c h"
+                            "fo fo";
+}
+
+.title{
+    background: yellow;
+    grid-area: t;
+    /* grid-column: 1/5;
+    grid-row: 1/2; */
+}
+
+.hierarquia{
+    background:indianred;
+    grid-area: h
+    /* grid-column: 4/5;
+    grid-row: 3/4; */
+}
+
+.filter{
+    background: blue;
+    grid-area: fi;
+    /* grid-column: 1/5;
+    grid-row: 2/3; */
+}
+
+.content{
+    grid-area: c;
+    overflow: auto;
+    
+}
+
+.content table {
+    border-collapse: collapse;
+    font-size: 1em;
+    overflow: auto;    
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.content table thead tr th{
+    background-color: #009879;
+    position: sticky;
+    top: 0;
+    z-index: 10;    
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content th,
+.content td,
+.content tr {
+    padding: 15px 20px;
+    white-space: nowrap; 
+
+}
+.content tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+
+.content tbody tr:hover{
+    font-weight: bold;
+    color: #009879;
+}
+
+.content tbody tr:nth-of-type(even){
+    background-color: #f3f3f3; 
+}
+.content tbody tr:last-of-type{
+    border-bottom: 2px solid #009879;
+}
+
+.footer{
+    background: greenyellow;
+    grid-area: fo;
+    /* grid-column: 1/5;
+    grid-row: 4/5; */
+}
